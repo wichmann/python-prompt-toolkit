@@ -35,7 +35,7 @@ class PathCompleter(Completer):
 
     def get_completions(self, document: Document,
                         complete_event: CompleteEvent) -> Iterable[Completion]:
-        text = document.text_before_cursor
+        text = document.get_word_under_cursor()
 
         # Complete only when we have at least the minimal input length,
         # otherwise, we can too many results and autocompletion will become too
