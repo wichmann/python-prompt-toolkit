@@ -99,6 +99,7 @@ def button_dialog(
 def input_dialog(
         title: AnyFormattedText = '',
         text: AnyFormattedText = '',
+        initial_text: AnyFormattedText = '',
         ok_text: str = 'OK',
         cancel_text: str = 'Cancel',
         completer: Optional[Completer] = None,
@@ -119,6 +120,7 @@ def input_dialog(
     cancel_button = Button(text=cancel_text, handler=_return_none)
 
     textfield = TextArea(
+        text=initial_text,
         multiline=False,
         password=password,
         completer=completer,
